@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="description" content="Reflecting on AI Hallucinations: Key Concepts and Strategies. A comprehensive breakdown of AI hallucination types, measurement techniques, and mitigation strategies.">
+    <meta name="keywords" content="AI Hallucinations, LLM, Machine Learning, Factual Hallucination, Contextual Hallucination, RAG, BERTScore">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reflecting on AI Hallucinations: Key Concepts and Strategies | Tamer Fahmy</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="article-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">TF</a>
+            <ul class="nav-menu">
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#ai-transformation">AI Transformation</a></li>
+                <li><a href="index.html#leadership">Leadership</a></li>
+                <li><a href="index.html#publications">Publications</a></li>
+                <li><a href="index.html#articles">Articles</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Article Content -->
+    <main class="article-main">
+        <article class="article-container">
+            <!-- Article Header -->
+            <header class="article-header">
+                <a href="index.html#articles" class="back-link"><i class="fas fa-arrow-left"></i> Back to Articles</a>
+                <div class="article-meta-header">
+                    <span class="article-category">AI & Technology</span>
+                    <span class="article-date"><i class="fas fa-calendar"></i> December 2024</span>
+                    <span class="article-read-time"><i class="fas fa-clock"></i> 8 min read</span>
+                </div>
+                <h1>Reflecting on AI Hallucinations: Key Concepts and Strategies</h1>
+                <p class="article-lead">A comprehensive breakdown of what AI hallucinations are and how we might think about tackling them</p>
+            </header>
+
+            <!-- Article Body -->
+            <div class="article-body">
+                <!-- Intro with beach image -->
+                <figure class="article-figure intro-figure">
+                    <img src="images/articles/ai-hallucinations-intro.png" alt="Relaxing beach scene - reflecting during PTO">
+                    <figcaption>Taking time to reflect on AI challenges during a short PTO</figcaption>
+                </figure>
+
+                <p class="intro-paragraph">
+                    During a short PTO, I found myself reflecting on the AI Hallucination topic that has been popping up in recent discussions I had with the team over the last couple of months while building several support use cases. It's easy to assume everyone working on AI LLMs, applications, or integration layers has already covered this ground. But sometimes, <strong>going back to basics is the most effective way to spark new ideas</strong>.
+                </p>
+
+                <p>Here's a quick breakdown of what AI hallucinations are and how we might think about tackling them:</p>
+
+                <section class="article-section">
+                    <h2><i class="fas fa-layer-group"></i> Types of Hallucinations</h2>
+                    
+                    <div class="info-callout">
+                        <i class="fas fa-info-circle"></i>
+                        <div>
+                            <strong>Data Conflict vs Hallucination:</strong> It's important to distinguish between data conflict and hallucination. Data conflict refers to conflicting data points across different backend sources (for example API results), which can confuse and mislead users. If the system response is in line with one data source, it is not a hallucination but a data conflict.
+                        </div>
+                    </div>
+
+                    <p>What are the common categories of hallucination then?</p>
+
+                    <!-- Factual Hallucination -->
+                    <div class="hallucination-card factual">
+                        <div class="hallucination-header">
+                            <span class="hallucination-type"><i class="fas fa-times-circle"></i> Factual Hallucination</span>
+                        </div>
+                        <p>The system generates objectively incorrect or made-up/fabricated facts. This often emerges from gaps or errors in the training data. Think of a RAG system with poor retrieval quality or irrelevant/missing documents, so it simply fills in the blanks.</p>
+                        <p><strong>Output examples:</strong> generating API method that doesn't exist in the library or a citation that doesn't exist.</p>
+                        
+                        <div class="example-box">
+                            <div class="example-prompt">
+                                <strong>Prompt:</strong> Who won the 2019-2020 premier league title?
+                            </div>
+                            <div class="example-correct">
+                                <i class="fas fa-check"></i>
+                                <div>
+                                    <strong>Factual Answer:</strong> Liverpool won the Premier League title in the 2019-2020 season.
+                                </div>
+                            </div>
+                            <div class="example-wrong">
+                                <i class="fas fa-times"></i>
+                                <div>
+                                    <strong>Factual Hallucination:</strong> Man City won the Champions League title in 2019-2020. <em>— False information.</em>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contextual Hallucination -->
+                    <div class="hallucination-card contextual">
+                        <div class="hallucination-header">
+                            <span class="hallucination-type"><i class="fas fa-random"></i> Contextual Hallucination</span>
+                        </div>
+                        <p>The system response is inconsistent with the context of the prompt, even if the facts themselves might be correct in another context. The model misinterprets the prompt or lacks proper guidance.</p>
+                        <p><strong>Mitigation:</strong> Structured prompt engineering, combined with RAG can add clarity.</p>
+                        
+                        <div class="example-box">
+                            <div class="example-prompt">
+                                <strong>Prompt:</strong> Who won the 2019-2020 premier league title?
+                            </div>
+                            <div class="example-correct">
+                                <i class="fas fa-check"></i>
+                                <div>
+                                    <strong>Factual Answer:</strong> Liverpool won the Premier League title in the 2019-2020 season.
+                                </div>
+                            </div>
+                            <div class="example-wrong">
+                                <i class="fas fa-times"></i>
+                                <div>
+                                    <strong>Contextual Hallucination:</strong> Man City won the Premier League title in the 2022-2023 season. <em>— While Man City really won the premier league in 2022, the response is inconsistent with the context of the prompt - It's unrelated yet true (fact) information.</em>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Logical Hallucination -->
+                    <div class="hallucination-card logical">
+                        <div class="hallucination-header">
+                            <span class="hallucination-type"><i class="fas fa-brain"></i> Logical Hallucination</span>
+                        </div>
+                        <p>The output is logically flawed. Common patterns include:</p>
+                        <ul class="logic-list">
+                            <li>Contradicting logic</li>
+                            <li>Invalid reasoning <em>(All apples are fruits; some fruits are bananas; therefore, all apples are bananas.)</em></li>
+                            <li>Math errors <em>(5+7=11)</em></li>
+                        </ul>
+                        
+                        <div class="code-example">
+                            <div class="code-header">Example: Logical Error in Code</div>
+<pre><code>def is_even(n):
+    if n % 2 == 1:
+        return True
+    else:
+        return False</code></pre>
+                            <p class="code-explanation">There's no syntax error, however the function is named <code>is_even</code>, but it returns <code>True</code> when <code>n % 2 == 1</code> (when n is odd). It returns <code>False</code> when n is even — this is the opposite of the intended behavior.</p>
+                        </div>
+                    </div>
+
+                    <!-- Multimodal Hallucination -->
+                    <div class="hallucination-card multimodal">
+                        <div class="hallucination-header">
+                            <span class="hallucination-type"><i class="fas fa-images"></i> Multimodal Hallucination</span>
+                        </div>
+                        <p><strong>Multimodal</strong> refers to the situation when the model works with more than a single Input/Output type (text/audio/video/image). This type of hallucination emerges when the system generates fabricated or incorrect information across the different modals.</p>
+                        
+                        <div class="example-box">
+                            <div class="example-prompt">
+                                <strong>Prompt:</strong> Generate an image of a Liverpool player celebrating the 2019-2020 premier league title
+                            </div>
+                            <div class="example-correct">
+                                <i class="fas fa-check"></i>
+                                <div>
+                                    <strong>Factual Answer:</strong> A Liverpool player celebrating
+                                </div>
+                            </div>
+                            <div class="example-wrong">
+                                <i class="fas fa-times"></i>
+                                <div>
+                                    <strong>Multimodal Hallucination:</strong> A Man City player celebrating or a Liverpool player celebrating the World Cup trophy!
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Multimodal Example Image -->
+                    <figure class="article-figure large">
+                        <img src="images/articles/multimodal-hallucination.png" alt="Multimodal Hallucination Example - Factual Answer vs Multimodal Hallucination showing Liverpool vs ManCity players">
+                        <figcaption>Visual example of Multimodal Hallucination: Factual Answer (Liverpool player) vs Hallucinations (ManCity player or wrong trophy)</figcaption>
+                    </figure>
+                </section>
+
+                <section class="article-section">
+                    <h2><i class="fas fa-chart-bar"></i> Measuring Hallucinations</h2>
+                    
+                    <p>There's no silver bullet yet, but common practices include:</p>
+
+                    <div class="measurement-grid">
+                        <div class="measurement-card">
+                            <div class="measurement-icon"><i class="fas fa-user-check"></i></div>
+                            <h3>Human Evaluation/Labeling</h3>
+                            <p>Assessing the <strong>Hallucination Rate (HR)</strong>, defined as the number of hallucinatory outputs divided by the total number of AI outputs.</p>
+                        </div>
+
+                        <div class="measurement-card">
+                            <div class="measurement-icon"><i class="fas fa-bullseye"></i></div>
+                            <h3>Factual Accuracy Metrics</h3>
+                            <div class="formula-block">
+                                <p><strong>Precision</strong> = TP / (TP + FP)</p>
+                                <p><strong>Recall</strong> = TP / (TP + FN)</p>
+                            </div>
+                        </div>
+
+                        <div class="measurement-card">
+                            <div class="measurement-icon"><i class="fas fa-balance-scale"></i></div>
+                            <h3>BERTScore</h3>
+                            <p>Measures semantic similarity between generated and reference texts (good for catching irrelevant content, but doesn't assess factual truth or logic).</p>
+                        </div>
+                    </div>
+
+                    <div class="insight-callout">
+                        <i class="fas fa-lightbulb"></i>
+                        <div>
+                            <strong>Interesting Finding:</strong> One post outlines an interesting correlation between BERTScore and ticket resolution, where increasing BERTScore by 0.01 improved the probability of positive resolution by about <strong>2.1% (p-value < 0.0001)</strong>, suggesting better model accuracy leads to better outcomes.
+                        </div>
+                    </div>
+
+                    <div class="warning-callout">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <div>
+                            <strong>Important:</strong> BERTScore alone isn't enough as it measures similarity, not truthfulness. It also may not help distinguish whether the AI is hallucinating or simply reflecting conflicting data. Combining it with <strong>fact-checking, grounding techniques, and reasoning prompts</strong> results in stronger evaluation.
+                        </div>
+                    </div>
+                </section>
+
+                <section class="article-section">
+                    <h2><i class="fas fa-shield-alt"></i> Taxonomy of Hallucination Mitigation Techniques</h2>
+                    
+                    <p>From the grand scheme of things, we need to focus on:</p>
+
+                    <div class="mitigation-grid">
+                        <div class="mitigation-item">
+                            <div class="mitigation-icon"><i class="fas fa-database"></i></div>
+                            <h4>Enhancing Training Data Quality</h4>
+                            <p>Comprehensive datasets, data cleansing, bias removal & continuous data improvements/updates</p>
+                        </div>
+
+                        <div class="mitigation-item">
+                            <div class="mitigation-icon"><i class="fas fa-user-shield"></i></div>
+                            <h4>Validation</h4>
+                            <p>Human review, feedback loops & real-time similarity scores (ex: BERTScore)</p>
+                        </div>
+
+                        <div class="mitigation-item">
+                            <div class="mitigation-icon"><i class="fas fa-terminal"></i></div>
+                            <h4>Refined Prompt Engineering</h4>
+                            <p>Clear/specific prompts plus specific desired output format</p>
+                        </div>
+
+                        <div class="mitigation-item">
+                            <div class="mitigation-icon"><i class="fas fa-search-plus"></i></div>
+                            <h4>Using RAGs</h4>
+                            <p>Retrieve relevant data and augment LLM knowledge with additional, often private or real-time data not part of the model's original training data</p>
+                        </div>
+                    </div>
+
+                    <div class="rag-process">
+                        <h4>The RAG Process:</h4>
+                        <div class="rag-steps">
+                            <div class="rag-step">
+                                <span class="step-number">1</span>
+                                <span>Retrieve relevant data</span>
+                            </div>
+                            <i class="fas fa-arrow-right"></i>
+                            <div class="rag-step">
+                                <span class="step-number">2</span>
+                                <span>Augment the data to model input</span>
+                            </div>
+                            <i class="fas fa-arrow-right"></i>
+                            <div class="rag-step">
+                                <span class="step-number">3</span>
+                                <span>Generate response by LLM</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p>In a detailed manner, this academic paper presents a structured taxonomy of hallucination mitigation techniques, categorizing approaches based on key dimensions and offering a solid foundation for both researchers and practitioners working to improve model reliability.</p>
+
+                    <!-- Taxonomy Figure -->
+                    <figure class="article-figure large">
+                        <img src="images/articles/hallucination-taxonomy.png" alt="Taxonomy of hallucination mitigation techniques in LLMs">
+                        <figcaption>Figure 1: Taxonomy of hallucination mitigation techniques in LLMs, focusing on prevalent methods that involve model development and prompting techniques. <br><em>Source: Lee, C., Han, X., Wu, Y., Lee, K., Cheng, M., Yang, Y., & Tan, C. (2024)</em></figcaption>
+                    </figure>
+                </section>
+
+                <section class="article-section conclusion-section">
+                    <h2><i class="fas fa-check-circle"></i> Key Takeaways</h2>
+                    <div class="takeaway-grid">
+                        <div class="takeaway-item neutral">
+                            <i class="fas fa-layer-group"></i>
+                            <span>4 types: Factual, Contextual, Logical, Multimodal</span>
+                        </div>
+                        <div class="takeaway-item positive">
+                            <i class="fas fa-chart-line"></i>
+                            <span>BERTScore + human evaluation for measurement</span>
+                        </div>
+                        <div class="takeaway-item positive">
+                            <i class="fas fa-search-plus"></i>
+                            <span>RAG + prompt engineering for mitigation</span>
+                        </div>
+                        <div class="takeaway-item caution">
+                            <i class="fas fa-exclamation"></i>
+                            <span>No silver bullet - combine techniques</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Article Footer -->
+                <footer class="article-footer">
+                    <div class="article-tags">
+                        <span class="tag">#AI</span>
+                        <span class="tag">#Hallucinations</span>
+                        <span class="tag">#LLM</span>
+                        <span class="tag">#RAG</span>
+                        <span class="tag">#BERTScore</span>
+                        <span class="tag">#MachineLearning</span>
+                    </div>
+                    <div class="article-share">
+                        <span>Share this article:</span>
+                        <a href="https://www.linkedin.com/sharing/share-offsite/?url=" target="_blank" rel="noopener noreferrer" aria-label="Share on LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                    <div class="article-author">
+                        <img src="images/profile.jpg" alt="Tamer Fahmy" class="author-image">
+                        <div class="author-info">
+                            <span class="author-name">Tamer Fahmy</span>
+                            <span class="author-title">Head of Business Support Engineering at Meta</span>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Website developed by Tamer Fahmy. All rights reserved.</p>
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/in/tamerfahmy2580/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="Connect on LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/Tamer-T-Fahmy" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="View my GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
