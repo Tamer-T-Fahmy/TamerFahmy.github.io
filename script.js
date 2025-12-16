@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initSmoothScrolling();
     initScrollAnimations();
     initNavbarScroll();
+    initSectionToggle();
 });
 
 /* =============================================
@@ -164,3 +165,32 @@ function initActiveNavHighlight() {
 }
 
 document.addEventListener('DOMContentLoaded', initActiveNavHighlight);
+
+/* =============================================
+   SECTION TOGGLE (COLLAPSE/EXPAND)
+   ============================================= */
+function initSectionToggle() {
+    const toggleButtons = document.querySelectorAll('.section-toggle');
+    
+    toggleButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const section = button.closest('.collapsible-section');
+            const sectionContent = section.querySelector('.section-content');
+            const isCollapsed = button.classList.contains('collapsed');
+            
+            if (isCollapsed) {
+                // Expand
+                button.classList.remove('collapsed');
+                sectionContent.classList.remove('collapsed');
+                section.classList.remove('collapsed');
+                button.setAttribute('aria-expanded', 'true');
+            } else {
+                // Collapse
+                button.classList.add('collapsed');
+                sectionContent.classList.add('collapsed');
+                section.classList.add('collapsed');
+                button.setAttribute('aria-expanded', 'false');
+            }
+        });
+    });
+}
