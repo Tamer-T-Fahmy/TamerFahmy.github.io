@@ -387,6 +387,7 @@ section {
     align-items: center;
     position: relative;
     margin-bottom: 1rem;
+    width: 100%;
 }
 
 .section-header-row .section-title {
@@ -398,27 +399,29 @@ section {
     right: 0;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(6, 104, 225, 0.1);
-    border: 1px solid var(--border-color);
+    background: rgba(6, 104, 225, 0.15);
+    border: 1px solid rgba(6, 104, 225, 0.3);
     border-radius: 8px;
-    width: 36px;
-    height: 36px;
+    width: 40px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     transition: all var(--transition-normal);
     color: var(--primary-color);
+    z-index: 10;
 }
 
 .section-toggle:hover {
-    background: rgba(6, 104, 225, 0.2);
+    background: rgba(6, 104, 225, 0.25);
     border-color: var(--primary-color);
-    transform: translateY(-50%) scale(1.05);
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 0 15px rgba(6, 104, 225, 0.3);
 }
 
 .section-toggle i {
-    font-size: 0.85rem;
+    font-size: 1rem;
     transition: transform var(--transition-normal);
 }
 
