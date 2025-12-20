@@ -49,25 +49,81 @@ function initNavigation() {
    ============================================= */
 function initSmoothScrolling() {
     const links = document.querySelectorAll('a[href^="#"]');
-    
+
     links.forEach(link => {
         link.addEventListener('click', (e) => {
             const href = link.getAttribute('href');
             if (href === '#') return;
-            
+
             const target = document.querySelector(href);
             if (target) {
                 e.preventDefault();
                 const navHeight = document.querySelector('.navbar').offsetHeight;
                 const targetPosition = target.offsetTop - navHeight;
-                
+
                 window.scrollTo({
                     top: targetPosition,
                     behavior: 'smooth'
                 });
+
+                // Update URL to clean path (e.g., /about instead of /#about)
+                const sectionId = href.replace('#', '');
+                const newUrl = sectionId === 'home' ? '/' : '/' + sectionId;
+                history.pushState({ section: sectionId }, '', newUrl);
             }
         });
     });
+
+    // Handle browser back/forward navigation
+    window.addEventListener('popstate', (e) => {
+        if (e.state && e.state.section) {
+            scrollToSection(e.state.section);
+        } else {
+            // If no state, scroll to top (home)
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    });
+
+    // Handle direct URL access (e.g., /about, /career)
+    handleDirectUrlAccess();
+}
+
+/* =============================================
+   HANDLE DIRECT URL ACCESS
+   ============================================= */
+function handleDirectUrlAccess() {
+    const path = window.location.pathname.replace('/', '');
+    
+    if (path && path !== '') {
+        // Wait for page to fully load, then scroll to section
+        setTimeout(() => {
+            scrollToSection(path);
+        }, 100);
+    }
+}
+
+/* =============================================
+   SCROLL TO SECTION HELPER
+   ============================================= */
+function scrollToSection(sectionId) {
+    const target = document.getElementById(sectionId);
+    if (target) {
+        const navHeight = document.querySelector('.navbar').offsetHeight;
+        const targetPosition = target.offsetTop - navHeight;
+        
+        window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+        });
+
+        // If section is collapsed, expand it
+        if (target.classList.contains('collapsed')) {
+            const button = target.querySelector('.section-toggle');
+            if (button) {
+                button.click();
+            }
+        }
+    }
 }
 
 /* =============================================
@@ -91,7 +147,7 @@ function initScrollAnimations() {
     const animateElements = document.querySelectorAll(
         '.stat-card, .ai-card, .publication-card, .contact-card, .about-text, .section-title'
     );
-    
+
     animateElements.forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(30px)';
@@ -118,7 +174,7 @@ function initNavbarScroll() {
 
     window.addEventListener('scroll', () => {
         const currentScroll = window.pageYOffset;
-        
+
         if (currentScroll > 100) {
             navbar.style.background = 'rgba(5, 5, 5, 0.98)';
             navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.3)';
@@ -132,7 +188,7 @@ function initNavbarScroll() {
         } else {
             navbar.style.transform = 'translateY(0)';
         }
-        
+
         lastScroll = currentScroll;
     });
 }
@@ -171,13 +227,13 @@ document.addEventListener('DOMContentLoaded', initActiveNavHighlight);
    ============================================= */
 function initSectionToggle() {
     const toggleButtons = document.querySelectorAll('.section-toggle');
-    
+
     toggleButtons.forEach(button => {
         button.addEventListener('click', () => {
             const section = button.closest('.collapsible-section');
             const sectionContent = section.querySelector('.section-content');
             const isCollapsed = button.classList.contains('collapsed');
-            
+
             if (isCollapsed) {
                 // Expand
                 button.classList.remove('collapsed');

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting... | Tamer Fahmy</title>
+    <script>
+        // GitHub Pages SPA redirect for clean URLs
+        // This handles direct access to URLs like /about, /career, etc.
+        (function() {
+            var path = window.location.pathname;
+            var validSections = ['about', 'ai-transformation', 'career', 'leadership', 'publications', 'articles', 'education', 'certifications', 'volunteering', 'contact'];
+            
+            // Remove leading/trailing slashes
+            var section = path.replace(/^\/|\/$/g, '');
+            
+            // Check if it's a valid section
+            if (validSections.includes(section)) {
+                // Redirect to homepage with section hash
+                window.location.replace('/#' + section);
+            } else if (path === '/' || path === '') {
+                // Homepage
+                window.location.replace('/');
+            } else {
+                // Unknown path - redirect to homepage
+                window.location.replace('/');
+            }
+        })();
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .loading {
+            text-align: center;
+        }
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid rgba(6, 104, 225, 0.3);
+            border-top-color: #0668E1;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="loading">
+        <div class="spinner"></div>
+        <p>Redirecting...</p>
+    </div>
+</body>
+</html>

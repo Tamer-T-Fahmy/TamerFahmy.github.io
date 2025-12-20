@@ -410,30 +410,30 @@
     .article-container {
         padding: 1rem;
     }
-    
+
     .article-figure.large {
         margin: 2rem -1rem;
         max-width: calc(100% + 2rem);
     }
-    
+
     .observation-card {
         flex-direction: column;
         text-align: center;
     }
-    
+
     .observation-number {
         margin: 0 auto;
     }
-    
+
     .takeaway-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .caution-header {
         flex-direction: column;
         text-align: center;
     }
-    
+
     .frustration-item {
         flex-direction: column;
         text-align: center;
@@ -813,7 +813,7 @@
     .measurement-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .mitigation-grid {
         grid-template-columns: 1fr;
     }
@@ -826,11 +826,11 @@
         flex-direction: column;
         text-align: center;
     }
-    
+
     .rag-steps {
         flex-direction: column;
     }
-    
+
     .rag-steps > i {
         transform: rotate(90deg);
     }
