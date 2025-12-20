@@ -92,37 +92,50 @@ function initSmoothScrolling() {
    HANDLE DIRECT URL ACCESS
    ============================================= */
 function handleDirectUrlAccess() {
+    // Handle clean URL paths (e.g., /about, /career)
     const path = window.location.pathname.replace('/', '');
-
-    if (path && path !== '') {
-        // Wait for page to fully load, then scroll to section
+    
+    // Handle hash-based URLs (e.g., /#about from 404 redirect)
+    const hash = window.location.hash.replace('#', '');
+    
+    const sectionId = path || hash;
+    
+    if (sectionId && sectionId !== '' && sectionId !== 'home') {
+        // Wait for page to fully load, then scroll to section and expand it
         setTimeout(() => {
-            scrollToSection(path);
-        }, 100);
+            scrollToSection(sectionId, true); // true = auto-expand
+        }, 200);
     }
 }
 
 /* =============================================
    SCROLL TO SECTION HELPER
    ============================================= */
-function scrollToSection(sectionId) {
+function scrollToSection(sectionId, autoExpand = false) {
     const target = document.getElementById(sectionId);
     if (target) {
-        const navHeight = document.querySelector('.navbar').offsetHeight;
-        const targetPosition = target.offsetTop - navHeight;
-
-        window.scrollTo({
-            top: targetPosition,
-            behavior: 'smooth'
-        });
-
-        // If section is collapsed, expand it
-        if (target.classList.contains('collapsed')) {
+        // If section should auto-expand (from direct URL access)
+        if (autoExpand && target.classList.contains('collapsed')) {
             const button = target.querySelector('.section-toggle');
-            if (button) {
-                button.click();
+            const sectionContent = target.querySelector('.section-content');
+            if (button && sectionContent) {
+                button.classList.remove('collapsed');
+                sectionContent.classList.remove('collapsed');
+                target.classList.remove('collapsed');
+                button.setAttribute('aria-expanded', 'true');
             }
         }
+        
+        // Small delay to allow expansion animation to start
+        setTimeout(() => {
+            const navHeight = document.querySelector('.navbar').offsetHeight;
+            const targetPosition = target.offsetTop - navHeight;
+
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+        }, autoExpand ? 100 : 0);
     }
 }
 
