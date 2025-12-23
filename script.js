@@ -94,12 +94,12 @@ function initSmoothScrolling() {
 function handleDirectUrlAccess() {
     // Handle clean URL paths (e.g., /about, /career)
     const path = window.location.pathname.replace(/^\//, '');
-    
+
     // Handle hash-based URLs (e.g., /#about from 404 redirect)
     const hash = window.location.hash.replace('#', '');
-    
+
     const sectionId = hash || path; // Prioritize hash over path
-    
+
     if (sectionId && sectionId !== '' && sectionId !== 'home') {
         // Use window.onload to ensure everything is fully loaded
         if (document.readyState === 'complete') {
@@ -123,14 +123,16 @@ function expandAndScrollToSection(sectionId) {
             // Expand the section
             const button = target.querySelector('.section-toggle');
             const sectionContent = target.querySelector('.section-content');
-            
+            const toggleText = button ? button.querySelector('.toggle-text') : null;
+
             if (button && sectionContent) {
                 button.classList.remove('collapsed');
                 sectionContent.classList.remove('collapsed');
                 target.classList.remove('collapsed');
                 button.setAttribute('aria-expanded', 'true');
+                if (toggleText) toggleText.textContent = 'Collapse';
             }
-            
+
             // Wait for expansion animation, then scroll
             setTimeout(() => {
                 const navHeight = document.querySelector('.navbar').offsetHeight;
@@ -162,7 +164,7 @@ function scrollToSection(sectionId, autoExpand = false) {
                 button.setAttribute('aria-expanded', 'true');
             }
         }
-        
+
         // Small delay to allow expansion animation to start
         setTimeout(() => {
             const navHeight = document.querySelector('.navbar').offsetHeight;
@@ -282,6 +284,7 @@ function initSectionToggle() {
         button.addEventListener('click', () => {
             const section = button.closest('.collapsible-section');
             const sectionContent = section.querySelector('.section-content');
+            const toggleText = button.querySelector('.toggle-text');
             const isCollapsed = button.classList.contains('collapsed');
 
             if (isCollapsed) {
@@ -290,12 +293,14 @@ function initSectionToggle() {
                 sectionContent.classList.remove('collapsed');
                 section.classList.remove('collapsed');
                 button.setAttribute('aria-expanded', 'true');
+                if (toggleText) toggleText.textContent = 'Collapse';
             } else {
                 // Collapse
                 button.classList.add('collapsed');
                 sectionContent.classList.add('collapsed');
                 section.classList.add('collapsed');
                 button.setAttribute('aria-expanded', 'false');
+                if (toggleText) toggleText.textContent = 'Expand';
             }
         });
     });
