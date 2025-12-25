@@ -7,28 +7,30 @@
     <script>
         // GitHub Pages redirect for clean URLs
         // Handles direct access to URLs like /about, /career, /leadership
+        // Redirects to index.html with hash to auto-expand sections
         (function() {
             var path = window.location.pathname;
             
-            // Standalone pages (redirect to actual HTML files)
-            var standalonePages = {
-                'about': '/about.html',
-                'career': '/career.html',
-                'leadership': '/leadership.html'
-            };
-            
-            // Hash-based sections on index.html
-            var hashSections = ['ai-transformation', 'publications', 'articles', 'education', 'certifications', 'volunteering', 'contact'];
+            // All sections that exist on index.html (will redirect with hash to auto-expand)
+            var indexSections = [
+                'about', 
+                'ai-transformation', 
+                'career', 
+                'leadership', 
+                'publications', 
+                'articles', 
+                'education', 
+                'certifications', 
+                'volunteering', 
+                'contact'
+            ];
 
             // Remove leading/trailing slashes
             var section = path.replace(/^\/|\/$/g, '');
 
-            // Check if it's a standalone page
-            if (standalonePages[section]) {
-                window.location.replace(standalonePages[section]);
-            }
-            // Check if it's a hash-based section
-            else if (hashSections.includes(section)) {
+            // Check if it's a valid section on index.html
+            if (indexSections.includes(section)) {
+                // Redirect to index.html with hash - script.js will auto-expand the section
                 window.location.replace('/#' + section);
             }
             // Homepage or unknown - redirect to homepage
