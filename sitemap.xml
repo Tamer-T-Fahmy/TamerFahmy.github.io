@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <!-- Homepage -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+    
+    <!-- Homepage with Profile Image -->
     <url>
         <loc>https://tamerfahmy.net/</loc>
         <lastmod>2025-12-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>1.0</priority>
+        <image:image>
+            <image:loc>https://tamerfahmy.net/images/TamerFahmy.jpg</image:loc>
+            <image:title>Tamer Fahmy - Global Head of Business Support Engineering at Meta</image:title>
+            <image:caption>Tamer Fahmy - AI Transformation and Leadership Expert based in Dublin, Ireland</image:caption>
+        </image:image>
     </url>
-
+    
     <!-- Section: About -->
     <url>
         <loc>https://tamerfahmy.net/#about</loc>
@@ -15,7 +22,7 @@
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
-
+    
     <!-- Section: AI Transformation -->
     <url>
         <loc>https://tamerfahmy.net/#ai-transformation</loc>
@@ -23,7 +30,7 @@
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
-
+    
     <!-- Section: Career Journey -->
     <url>
         <loc>https://tamerfahmy.net/#career</loc>
@@ -31,7 +38,7 @@
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
-
+    
     <!-- Section: Leadership Philosophy -->
     <url>
         <loc>https://tamerfahmy.net/#leadership</loc>
@@ -39,7 +46,7 @@
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
-
+    
     <!-- Section: Publications -->
     <url>
         <loc>https://tamerfahmy.net/#publications</loc>
@@ -47,7 +54,7 @@
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
-
+    
     <!-- Section: Articles -->
     <url>
         <loc>https://tamerfahmy.net/#articles</loc>
@@ -55,7 +62,7 @@
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
-
+    
     <!-- Section: Education -->
     <url>
         <loc>https://tamerfahmy.net/#education</loc>
@@ -63,7 +70,7 @@
         <changefreq>yearly</changefreq>
         <priority>0.7</priority>
     </url>
-
+    
     <!-- Section: Certifications -->
     <url>
         <loc>https://tamerfahmy.net/#certifications</loc>
@@ -71,7 +78,7 @@
         <changefreq>yearly</changefreq>
         <priority>0.7</priority>
     </url>
-
+    
     <!-- Section: Volunteering -->
     <url>
         <loc>https://tamerfahmy.net/#volunteering</loc>
@@ -79,7 +86,7 @@
         <changefreq>yearly</changefreq>
         <priority>0.7</priority>
     </url>
-
+    
     <!-- Section: Contact -->
     <url>
         <loc>https://tamerfahmy.net/#contact</loc>
@@ -87,20 +94,28 @@
         <changefreq>yearly</changefreq>
         <priority>0.7</priority>
     </url>
-
+    
     <!-- Article: Is 2025 a Transition Year for Developers? -->
     <url>
         <loc>https://tamerfahmy.net/article-2025-transition-year.html</loc>
         <lastmod>2025-12-25</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://tamerfahmy.net/images/articles/llm-usage-chart.jpg</image:loc>
+            <image:title>LLM Usage Statistics 2025</image:title>
+        </image:image>
     </url>
-
+    
     <!-- Article: AI Hallucinations -->
     <url>
         <loc>https://tamerfahmy.net/article-ai-hallucinations.html</loc>
         <lastmod>2025-12-25</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://tamerfahmy.net/images/articles/ai-hallucinations-intro.jpg</image:loc>
+            <image:title>AI Hallucinations Key Concepts</image:title>
+        </image:image>
     </url>
 </urlset>
