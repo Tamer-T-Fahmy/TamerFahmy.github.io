@@ -5,13 +5,13 @@
     <!-- Homepage with Profile Image -->
     <url>
         <loc>https://tamerfahmy.net/</loc>
-        <lastmod>2025-12-25</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>1.0</priority>
         <image:image>
             <image:loc>https://tamerfahmy.net/images/TamerFahmy.jpg</image:loc>
-            <image:title>Tamer Fahmy - Global Head of Business Support Engineering at Meta</image:title>
-            <image:caption>Tamer Fahmy - AI Transformation and Leadership Expert based in Dublin, Ireland</image:caption>
+            <image:title>Tamer Fahmy - AI Transformation and Strategy Leader</image:title>
+            <image:caption>Tamer Fahmy - Engineering Leader with 20+ years in Tech, deploying AI solutions for significant efficiency gains</image:caption>
         </image:image>
     </url>
 
@@ -47,9 +47,9 @@
     <!-- Section: AI Transformation -->
     <url>
         <loc>https://tamerfahmy.net/#ai-transformation</loc>
-        <lastmod>2025-12-25</lastmod>
+        <lastmod>2026-01-01</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
+        <priority>0.9</priority>
     </url>
 
     <!-- Section: Publications -->
