@@ -58,16 +58,35 @@ function initSmoothScrolling() {
             const target = document.querySelector(href);
             if (target) {
                 e.preventDefault();
-                const navHeight = document.querySelector('.navbar').offsetHeight;
-                const targetPosition = target.offsetTop - navHeight;
+                
+                // Get the section ID
+                const sectionId = href.replace('#', '');
+                
+                // Auto-expand the section if it's collapsible
+                const button = target.querySelector('.section-toggle');
+                const sectionContent = target.querySelector('.section-content');
+                const toggleText = button ? button.querySelector('.toggle-text') : null;
+                
+                if (button && sectionContent && button.classList.contains('collapsed')) {
+                    button.classList.remove('collapsed');
+                    sectionContent.classList.remove('collapsed');
+                    target.classList.remove('collapsed');
+                    button.setAttribute('aria-expanded', 'true');
+                    if (toggleText) toggleText.textContent = 'Collapse';
+                }
+                
+                // Wait a moment for expansion, then scroll
+                setTimeout(() => {
+                    const navHeight = document.querySelector('.navbar').offsetHeight;
+                    const targetPosition = target.offsetTop - navHeight;
 
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }, 100);
 
                 // Update URL to clean path (e.g., /about instead of /#about)
-                const sectionId = href.replace('#', '');
                 const newUrl = sectionId === 'home' ? '/' : '/' + sectionId;
                 history.pushState({ section: sectionId }, '', newUrl);
             }
@@ -77,7 +96,7 @@ function initSmoothScrolling() {
     // Handle browser back/forward navigation
     window.addEventListener('popstate', (e) => {
         if (e.state && e.state.section) {
-            scrollToSection(e.state.section);
+            expandAndScrollToSection(e.state.section);
         } else {
             // If no state, scroll to top (home)
             window.scrollTo({ top: 0, behavior: 'smooth' });
