@@ -700,7 +700,7 @@ section {
 }
 
 .metric-value {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 800;
     background: var(--gradient-primary);
     -webkit-background-clip: text;
