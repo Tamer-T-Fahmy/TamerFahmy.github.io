@@ -2073,6 +2073,18 @@ section {
     color: white;
 }
 
+.timeline-marker.meta-logo-marker {
+    padding: 0;
+    overflow: hidden;
+    border-color: #0668E1;
+    background: transparent;
+}
+
+.timeline-item.current .timeline-marker.meta-logo-marker {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 20px rgba(6, 104, 225, 0.5);
+}
+
 .timeline-item.orange-expert .timeline-marker {
     border-color: #FF6600;
 }
