@@ -58,15 +58,15 @@ function initSmoothScrolling() {
             const target = document.querySelector(href);
             if (target) {
                 e.preventDefault();
-                
+
                 // Get the section ID
                 const sectionId = href.replace('#', '');
-                
+
                 // Auto-expand the section if it's collapsible
                 const button = target.querySelector('.section-toggle');
                 const sectionContent = target.querySelector('.section-content');
                 const toggleText = button ? button.querySelector('.toggle-text') : null;
-                
+
                 if (button && sectionContent && button.classList.contains('collapsed')) {
                     button.classList.remove('collapsed');
                     sectionContent.classList.remove('collapsed');
@@ -74,7 +74,7 @@ function initSmoothScrolling() {
                     button.setAttribute('aria-expanded', 'true');
                     if (toggleText) toggleText.textContent = 'Collapse';
                 }
-                
+
                 // Wait a moment for expansion, then scroll
                 setTimeout(() => {
                     const navHeight = document.querySelector('.navbar').offsetHeight;

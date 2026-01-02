@@ -847,7 +847,7 @@ section {
     .metrics-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .metric-value {
         font-size: 2rem;
     }
@@ -858,19 +858,19 @@ section {
         grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
     }
-    
+
     .pillars-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .impact-metrics-banner {
         padding: 1.5rem;
     }
-    
+
     .metric-value {
         font-size: 1.75rem;
     }
-    
+
     .metric-label {
         font-size: 0.8rem;
     }
