@@ -2081,6 +2081,21 @@ section {
     color: #FF6600;
 }
 
+/* Company Logo in Timeline Marker */
+.timeline-marker.orange-logo-marker {
+    padding: 0;
+    overflow: hidden;
+    border-color: #F16E00;
+    background: transparent;
+}
+
+.timeline-marker .company-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
 .timeline-item.mobinil .timeline-marker {
     border-color: #E30613;
 }
