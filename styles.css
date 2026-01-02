@@ -2089,6 +2089,13 @@ section {
     background: transparent;
 }
 
+.timeline-marker.mobinil-logo-marker {
+    padding: 0;
+    overflow: hidden;
+    border-color: #4A9E9E;
+    background: #ffffff;
+}
+
 .timeline-marker .company-logo {
     width: 100%;
     height: 100%;

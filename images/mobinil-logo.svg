@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 120">
+  <!-- Background -->
+  <rect width="200" height="120" fill="#ffffff"/>
+  
+  <!-- MobiNiL Text -->
+  <text x="100" y="55" font-family="Arial, sans-serif" font-size="42" font-weight="bold" text-anchor="middle">
+    <tspan fill="#4A9E9E">Mobi</tspan><tspan fill="#D4874D">N</tspan><tspan fill="#4A9E9E">i</tspan><tspan fill="#D4874D">L</tspan>
+  </text>
+  
+  <!-- Wave lines -->
+  <path d="M20 80 Q50 70, 80 80 T140 80 T200 80" stroke="#4A9E9E" stroke-width="3" fill="none" opacity="0.8"/>
+  <path d="M0 90 Q40 80, 80 90 T160 90 T200 90" stroke="#D4874D" stroke-width="3" fill="none" opacity="0.8"/>
+</svg>
