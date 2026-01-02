@@ -2109,10 +2109,10 @@ section {
 }
 
 .timeline-marker .company-logo {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
+    width: 85%;
+    height: 85%;
+    object-fit: contain;
+    border-radius: 0;
 }
 
 .timeline-item.mobinil .timeline-marker {
