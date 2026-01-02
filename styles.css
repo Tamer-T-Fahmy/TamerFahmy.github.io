@@ -2096,6 +2096,18 @@ section {
     background: #ffffff;
 }
 
+.timeline-marker.facebook-logo-marker {
+    padding: 0;
+    overflow: hidden;
+    border-color: #1877F2;
+    background: transparent;
+}
+
+.timeline-item.facebook .timeline-title .company {
+    background: rgba(24, 119, 242, 0.15);
+    color: #1877F2;
+}
+
 .timeline-marker .company-logo {
     width: 100%;
     height: 100%;
