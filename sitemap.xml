@@ -6,44 +6,60 @@
     <!-- Homepage with Profile Image -->
     <url>
         <loc>https://tamerfahmy.net/</loc>
-        <lastmod>2026-01-01</lastmod>
+        <lastmod>2026-01-05</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
         <image:image>
             <image:loc>https://tamerfahmy.net/images/TamerFahmy.jpg</image:loc>
-            <image:title>Tamer Fahmy - AI Transformation and Strategy Leader</image:title>
-            <image:caption>Tamer Fahmy - Engineering Leader with 20+ years of experience, growing organizations to 120+ engineers across 7 global locations, driving AI transformation and revenue growth</image:caption>
+            <image:title>Tamer Fahmy - Software Engineering Director | AI Transformation &amp; Global Technical Leadership</image:title>
+            <image:caption>Tamer Fahmy - Global technology leader with 20+ years of experience driving AI-enabled transformation, operational excellence, and scalable engineering organizations at Meta</image:caption>
         </image:image>
     </url>
 
-    <!-- Section: About -->
+    <!-- Section: Executive Impact Snapshot -->
     <url>
-        <loc>https://tamerfahmy.net/#about</loc>
-        <lastmod>2026-01-01</lastmod>
+        <loc>https://tamerfahmy.net/#impact-snapshot</loc>
+        <lastmod>2026-01-05</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
-    </url>
-
-    <!-- Section: AI Transformation (Highest Priority After Homepage) -->
-    <url>
-        <loc>https://tamerfahmy.net/#ai-transformation</loc>
-        <lastmod>2026-01-01</lastmod>
-        <changefreq>weekly</changefreq>
         <priority>0.95</priority>
     </url>
 
-    <!-- Section: Career -->
+    <!-- Section: Executive Profile -->
     <url>
-        <loc>https://tamerfahmy.net/#career</loc>
-        <lastmod>2026-01-01</lastmod>
+        <loc>https://tamerfahmy.net/#executive-profile</loc>
+        <lastmod>2026-01-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
 
-    <!-- Section: Leadership -->
+    <!-- Section: Strategic Leadership Focus Areas -->
+    <url>
+        <loc>https://tamerfahmy.net/#focus-areas</loc>
+        <lastmod>2026-01-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Section: Executive Experience (Career) -->
+    <url>
+        <loc>https://tamerfahmy.net/#career</loc>
+        <lastmod>2026-01-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Section: Executive Case Studies -->
+    <url>
+        <loc>https://tamerfahmy.net/#case-studies</loc>
+        <lastmod>2026-01-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Section: Leadership Philosophy -->
     <url>
         <loc>https://tamerfahmy.net/#leadership</loc>
-        <lastmod>2026-01-01</lastmod>
+        <lastmod>2026-01-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.85</priority>
         <image:image>
@@ -68,58 +84,60 @@
         </image:image>
     </url>
 
-    <!-- Section: Publications -->
-    <url>
-        <loc>https://tamerfahmy.net/#publications</loc>
-        <lastmod>2026-01-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <!-- Section: Articles -->
+    <!-- Section: Thought Leadership & Articles -->
     <url>
         <loc>https://tamerfahmy.net/#articles</loc>
-        <lastmod>2026-01-01</lastmod>
+        <lastmod>2026-01-05</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
 
-    <!-- Section: Education -->
+    <!-- Section: Academic Publications -->
     <url>
-        <loc>https://tamerfahmy.net/#education</loc>
-        <lastmod>2026-01-01</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <!-- Section: Certifications -->
-    <url>
-        <loc>https://tamerfahmy.net/#certifications</loc>
-        <lastmod>2026-01-01</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <!-- Section: Volunteering -->
-    <url>
-        <loc>https://tamerfahmy.net/#volunteering</loc>
-        <lastmod>2026-01-01</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.7</priority>
+        <loc>https://tamerfahmy.net/#publications</loc>
+        <lastmod>2026-01-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
     </url>
 
     <!-- Section: Contact -->
     <url>
         <loc>https://tamerfahmy.net/#contact</loc>
-        <lastmod>2026-01-01</lastmod>
+        <lastmod>2026-01-05</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.7</priority>
+    </url>
+
+    <!-- Standalone Pages -->
+
+    <!-- About Page -->
+    <url>
+        <loc>https://tamerfahmy.net/about.html</loc>
+        <lastmod>2026-01-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Career Page -->
+    <url>
+        <loc>https://tamerfahmy.net/career.html</loc>
+        <lastmod>2026-01-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Leadership Page -->
+    <url>
+        <loc>https://tamerfahmy.net/leadership.html</loc>
+        <lastmod>2026-01-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
     </url>
 
     <!-- Article: Is 2025 a Transition Year for Developers? -->
     <url>
         <loc>https://tamerfahmy.net/article-2025-transition-year.html</loc>
-        <lastmod>2026-01-01</lastmod>
+        <lastmod>2026-01-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.85</priority>
         <image:image>
@@ -142,7 +160,7 @@
     <!-- Article: AI Hallucinations -->
     <url>
         <loc>https://tamerfahmy.net/article-ai-hallucinations.html</loc>
-        <lastmod>2026-01-01</lastmod>
+        <lastmod>2026-01-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.85</priority>
         <image:image>
