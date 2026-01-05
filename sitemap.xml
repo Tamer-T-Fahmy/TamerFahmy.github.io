@@ -124,4 +124,12 @@
         </image:image>
     </url>
 
+    <!-- Privacy Policy -->
+    <url>
+        <loc>https://tamerfahmy.net/privacy.html</loc>
+        <lastmod>2026-01-05</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
 </urlset>
