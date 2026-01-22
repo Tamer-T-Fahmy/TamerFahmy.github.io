@@ -1,6 +1,9 @@
 # robots.txt for tamerfahmy.net
 # Optimized for all major search engines
-# Last updated: 2026-01-05
+# Last updated: 2026-01-22
+
+# Canonical Domain: https://tamerfahmy.net/
+# All other variants (http://, www.) redirect here automatically via GitHub Pages
 
 # Allow all search engines to crawl the site
 User-agent: *
