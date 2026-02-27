@@ -1740,6 +1740,16 @@ section {
     font-size: 0.8rem;
 }
 
+.pub-buy-links {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.pub-buy-links .pub-link {
+    margin-top: 0.5rem;
+}
+
 .publication-card.featured {
     border-color: rgba(6, 104, 225, 0.3);
     background: linear-gradient(135deg, var(--card-bg) 0%, rgba(6, 104, 225, 0.05) 100%);
