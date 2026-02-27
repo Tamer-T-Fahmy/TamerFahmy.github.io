@@ -1,6 +1,6 @@
 # robots.txt for tamerfahmy.net
 # Optimized for all major search engines
-# Last updated: 2026-01-22
+# Last updated: 2026-02-27
 
 # Canonical Domain: https://tamerfahmy.net/
 # All other variants (http://, www.) redirect here automatically via GitHub Pages
@@ -8,12 +8,10 @@
 # Allow all search engines to crawl the site
 User-agent: *
 Allow: /
-Crawl-delay: 1
 
 # Google Search
 User-agent: Googlebot
 Allow: /
-Crawl-delay: 1
 
 User-agent: Googlebot-Image
 Allow: /images/
@@ -27,7 +25,6 @@ Allow: /
 # Bing Search
 User-agent: Bingbot
 Allow: /
-Crawl-delay: 1
 
 User-agent: msnbot
 Allow: /
@@ -50,7 +47,6 @@ Allow: /
 # Yandex (Russia)
 User-agent: Yandex
 Allow: /
-Crawl-delay: 2
 
 # Sogou (China)
 User-agent: Sogou
