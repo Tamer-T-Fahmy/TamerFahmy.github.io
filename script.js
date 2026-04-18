@@ -3,11 +3,11 @@
    ============================================= */
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Initialize all components
     initNavigation();
     initSmoothScrolling();
     initScrollAnimations();
     initNavbarScroll();
+    initActiveNavHighlight();
     initSectionToggle();
 });
 
@@ -59,7 +59,6 @@ function initSmoothScrolling() {
             if (target) {
                 e.preventDefault();
 
-                // Get the section ID
                 const sectionId = href.replace('#', '');
 
                 // Auto-expand the section if it's collapsible
@@ -86,7 +85,7 @@ function initSmoothScrolling() {
                     });
                 }, 100);
 
-                // Update URL to clean path (e.g., /about instead of /#about)
+                // Update URL to clean path
                 const newUrl = sectionId === 'home' ? '/' : '/' + sectionId;
                 history.pushState({ section: sectionId }, '', newUrl);
             }
@@ -98,7 +97,6 @@ function initSmoothScrolling() {
         if (e.state && e.state.section) {
             expandAndScrollToSection(e.state.section);
         } else {
-            // If no state, scroll to top (home)
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     });
@@ -111,16 +109,11 @@ function initSmoothScrolling() {
    HANDLE DIRECT URL ACCESS
    ============================================= */
 function handleDirectUrlAccess() {
-    // Handle clean URL paths (e.g., /about, /career)
     const path = window.location.pathname.replace(/^\//, '');
-
-    // Handle hash-based URLs (e.g., /#about from 404 redirect)
     const hash = window.location.hash.replace('#', '');
-
-    const sectionId = hash || path; // Prioritize hash over path
+    const sectionId = hash || path;
 
     if (sectionId && sectionId !== '' && sectionId !== 'home') {
-        // Use window.onload to ensure everything is fully loaded
         if (document.readyState === 'complete') {
             expandAndScrollToSection(sectionId);
         } else {
@@ -135,11 +128,9 @@ function handleDirectUrlAccess() {
    EXPAND AND SCROLL TO SECTION
    ============================================= */
 function expandAndScrollToSection(sectionId) {
-    // Give extra time for all resources to load
     setTimeout(() => {
         const target = document.getElementById(sectionId);
         if (target) {
-            // Expand the section
             const button = target.querySelector('.section-toggle');
             const sectionContent = target.querySelector('.section-content');
             const toggleText = button ? button.querySelector('.toggle-text') : null;
@@ -152,7 +143,6 @@ function expandAndScrollToSection(sectionId) {
                 if (toggleText) toggleText.textContent = 'Collapse';
             }
 
-            // Wait for expansion animation, then scroll
             setTimeout(() => {
                 const navHeight = document.querySelector('.navbar').offsetHeight;
                 const targetPosition = target.offsetTop - navHeight;
@@ -167,38 +157,7 @@ function expandAndScrollToSection(sectionId) {
 }
 
 /* =============================================
-   SCROLL TO SECTION HELPER
-   ============================================= */
-function scrollToSection(sectionId, autoExpand = false) {
-    const target = document.getElementById(sectionId);
-    if (target) {
-        // If section should auto-expand (from direct URL access)
-        if (autoExpand && target.classList.contains('collapsed')) {
-            const button = target.querySelector('.section-toggle');
-            const sectionContent = target.querySelector('.section-content');
-            if (button && sectionContent) {
-                button.classList.remove('collapsed');
-                sectionContent.classList.remove('collapsed');
-                target.classList.remove('collapsed');
-                button.setAttribute('aria-expanded', 'true');
-            }
-        }
-
-        // Small delay to allow expansion animation to start
-        setTimeout(() => {
-            const navHeight = document.querySelector('.navbar').offsetHeight;
-            const targetPosition = target.offsetTop - navHeight;
-
-            window.scrollTo({
-                top: targetPosition,
-                behavior: 'smooth'
-            });
-        }, autoExpand ? 100 : 0);
-    }
-}
-
-/* =============================================
-   SCROLL ANIMATIONS
+   SCROLL ANIMATIONS (uses CSS classes instead of inline styles)
    ============================================= */
 function initScrollAnimations() {
     const observerOptions = {
@@ -216,82 +175,82 @@ function initScrollAnimations() {
     }, observerOptions);
 
     const animateElements = document.querySelectorAll(
-        '.stat-card, .ai-card, .publication-card, .contact-card, .about-text, .section-title'
+        '.stat-card, .publication-card, .contact-card, .section-title'
     );
 
     animateElements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        el.classList.add('animate-target');
         observer.observe(el);
     });
-
-    const style = document.createElement('style');
-    style.textContent = `
-        .animate-in {
-            opacity: 1 !important;
-            transform: translateY(0) !important;
-        }
-    `;
-    document.head.appendChild(style);
 }
 
 /* =============================================
-   NAVBAR SCROLL EFFECT
+   NAVBAR SCROLL EFFECT (throttled with rAF, uses CSS classes)
    ============================================= */
 function initNavbarScroll() {
     const navbar = document.querySelector('.navbar');
     let lastScroll = 0;
+    let ticking = false;
 
     window.addEventListener('scroll', () => {
-        const currentScroll = window.pageYOffset;
+        if (!ticking) {
+            requestAnimationFrame(() => {
+                const currentScroll = window.pageYOffset;
 
-        if (currentScroll > 100) {
-            navbar.style.background = 'rgba(5, 5, 5, 0.98)';
-            navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.3)';
-        } else {
-            navbar.style.background = 'rgba(10, 10, 10, 0.9)';
-            navbar.style.boxShadow = 'none';
+                if (currentScroll > 100) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+
+                if (currentScroll > lastScroll && currentScroll > 500) {
+                    navbar.classList.add('hidden');
+                } else {
+                    navbar.classList.remove('hidden');
+                }
+
+                lastScroll = currentScroll;
+                ticking = false;
+            });
+            ticking = true;
         }
-
-        if (currentScroll > lastScroll && currentScroll > 500) {
-            navbar.style.transform = 'translateY(-100%)';
-        } else {
-            navbar.style.transform = 'translateY(0)';
-        }
-
-        lastScroll = currentScroll;
     });
 }
 
 /* =============================================
-   ACTIVE NAV LINK HIGHLIGHTING
+   ACTIVE NAV LINK HIGHLIGHTING (throttled with rAF)
    ============================================= */
 function initActiveNavHighlight() {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-menu a');
+    let ticking = false;
 
     window.addEventListener('scroll', () => {
-        let current = '';
-        const navHeight = document.querySelector('.navbar').offsetHeight;
+        if (!ticking) {
+            requestAnimationFrame(() => {
+                let current = '';
+                const navHeight = document.querySelector('.navbar').offsetHeight;
 
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop - navHeight - 100;
-            if (window.pageYOffset >= sectionTop) {
-                current = section.getAttribute('id');
-            }
-        });
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - navHeight - 100;
+                    if (window.pageYOffset >= sectionTop) {
+                        current = section.getAttribute('id');
+                    }
+                });
 
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${current}`) {
-                link.classList.add('active');
-            }
-        });
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('active');
+                    }
+                });
+
+                ticking = false;
+            });
+            ticking = true;
+        }
     });
 }
-
-document.addEventListener('DOMContentLoaded', initActiveNavHighlight);
 
 /* =============================================
    SECTION TOGGLE (COLLAPSE/EXPAND)
@@ -307,14 +266,12 @@ function initSectionToggle() {
             const isCollapsed = button.classList.contains('collapsed');
 
             if (isCollapsed) {
-                // Expand
                 button.classList.remove('collapsed');
                 sectionContent.classList.remove('collapsed');
                 section.classList.remove('collapsed');
                 button.setAttribute('aria-expanded', 'true');
                 if (toggleText) toggleText.textContent = 'Collapse';
             } else {
-                // Collapse
                 button.classList.add('collapsed');
                 sectionContent.classList.add('collapsed');
                 section.classList.add('collapsed');

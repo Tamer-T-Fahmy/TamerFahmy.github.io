@@ -102,6 +102,16 @@ a:hover {
     backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border-color);
     padding: 1rem 0;
+    transition: background var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-normal);
+}
+
+.navbar.scrolled {
+    background: rgba(5, 5, 5, 0.98);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.navbar.hidden {
+    transform: translateY(-100%);
 }
 
 .nav-container {
@@ -490,6 +500,20 @@ section {
     max-width: 600px;
     margin: 0 auto 4rem;
     font-size: 1.1rem;
+}
+
+/* =============================================
+   SCROLL ANIMATIONS
+   ============================================= */
+.animate-target {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.animate-in {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
 }
 
 /* =============================================
