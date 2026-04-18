@@ -66,6 +66,7 @@
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
 
     <!-- Preload critical resources -->
+    <link rel="preload" href="images/TamerFahmy.webp" as="image" type="image/webp">
     <link rel="preload" href="images/TamerFahmy.jpg" as="image" type="image/jpeg">
     <link rel="preload" href="fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="styles.css" as="style">
@@ -208,7 +209,10 @@
             </div>
             <div class="hero-visual">
                 <div class="profile-image-container">
-                    <img src="images/TamerFahmy.jpg" alt="Tamer Fahmy" class="profile-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <picture>
+                        <source srcset="images/TamerFahmy.webp" type="image/webp">
+                        <img src="images/TamerFahmy.jpg" alt="Tamer Fahmy" class="profile-image" onerror="this.style.display='none'; this.parentElement.nextElementSibling.style.display='flex';">
+                    </picture>
                     <div class="profile-placeholder" style="display: none;">
                         <i class="fas fa-user"></i>
                     </div>
@@ -557,7 +561,10 @@
                         <p class="philosophy-quote">"Define success on your own terms, achieve it by your own rules, and build a life you're proud to live."</p>
                         <p class="philosophy-author">— Anne Sweeney</p>
                         <div class="philosophy-graphic">
-                            <img loading="lazy" src="images/leadership/define-success.jpg" alt="Define Success - What does success look like, Start with WHY, Plan Execute Monitor Control">
+                            <picture>
+                                <source srcset="images/leadership/define-success.webp" type="image/webp">
+                                <img loading="lazy" src="images/leadership/define-success.jpg" alt="Define Success - What does success look like, Start with WHY, Plan Execute Monitor Control">
+                            </picture>
                         </div>
                         <div class="philosophy-concepts">
                             <div class="concept-item">
@@ -592,7 +599,10 @@
                         <p class="philosophy-quote">"Working hard for something you love is 'Passion' while working hard for something you don't love is 'Stress'"</p>
                         <p class="philosophy-subtitle">People don't find their passion by What they do, they find it by Why they do it!</p>
                         <div class="philosophy-graphic">
-                            <img loading="lazy" src="images/leadership/passion.jpg" alt="Passion - Motivation, Long-term Success, Overcome Fear, Perseverance">
+                            <picture>
+                                <source srcset="images/leadership/passion.webp" type="image/webp">
+                                <img loading="lazy" src="images/leadership/passion.jpg" alt="Passion - Motivation, Long-term Success, Overcome Fear, Perseverance">
+                            </picture>
                         </div>
                         <div class="philosophy-concepts">
                             <div class="concept-item">
@@ -625,7 +635,10 @@
                         <h3 class="philosophy-title">Focus on Impact</h3>
                         <p class="philosophy-quote">"Focus on impact, not motion!"</p>
                         <div class="philosophy-graphic">
-                            <img loading="lazy" src="images/leadership/focus-impact.jpg" alt="Focus on Impact - Motion vs Progress, Short & Long term, Impact Dynamics">
+                            <picture>
+                                <source srcset="images/leadership/focus-impact.webp" type="image/webp">
+                                <img loading="lazy" src="images/leadership/focus-impact.jpg" alt="Focus on Impact - Motion vs Progress, Short & Long term, Impact Dynamics">
+                            </picture>
                         </div>
                         <div class="philosophy-concepts">
                             <div class="concept-item">
@@ -663,7 +676,10 @@
                         <h3 class="philosophy-title">Persistence</h3>
                         <p class="philosophy-quote">"The sky is not your limit... you are"</p>
                         <div class="philosophy-graphic">
-                            <img loading="lazy" src="images/leadership/persistence.jpg" alt="Persistence - Embrace failure, Fail Fast, Move Fast, Infinite Game, Discipline">
+                            <picture>
+                                <source srcset="images/leadership/persistence.webp" type="image/webp">
+                                <img loading="lazy" src="images/leadership/persistence.jpg" alt="Persistence - Embrace failure, Fail Fast, Move Fast, Infinite Game, Discipline">
+                            </picture>
                         </div>
                         <div class="philosophy-concepts">
                             <div class="concept-item">
@@ -704,7 +720,10 @@
                         <h3 class="philosophy-title">Humbleness</h3>
                         <p class="philosophy-quote">"Be confident and bold while also being humble"</p>
                         <div class="philosophy-graphic">
-                            <img loading="lazy" src="images/leadership/humbleness.jpg" alt="Humbleness - Open for Feedback, Dunning-Kruger, Servant Leadership, Vulnerability">
+                            <picture>
+                                <source srcset="images/leadership/humbleness.webp" type="image/webp">
+                                <img loading="lazy" src="images/leadership/humbleness.jpg" alt="Humbleness - Open for Feedback, Dunning-Kruger, Servant Leadership, Vulnerability">
+                            </picture>
                         </div>
                         <div class="philosophy-concepts">
                             <div class="concept-item">
