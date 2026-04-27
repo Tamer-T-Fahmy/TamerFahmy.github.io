@@ -265,9 +265,9 @@
                     <div class="info-callout">
                         <i class="fas fa-info-circle"></i>
                         <div>
-                            <strong>In a nutshell:</strong><br>
-                            AI Copilot agents are <strong style="color: #00D4AA;">strongest</strong> where structure, repetition, and clear patterns exist.<br>
-                            AI Copilot agents are <strong style="color: #ef4444;">weakest</strong> where uncertainty, consequences, and system complexity dominate.
+                            <strong>In a nutshell,</strong><br>
+                            AI Copilot agents is <strong style="color: #00D4AA;">strongest</strong> where structure, repetition, and clear patterns exist<br>
+                            AI Copilot agents is <strong style="color: #ef4444;">weakest</strong> where uncertainty, consequences, and system complexity dominate
                         </div>
                     </div>
 
@@ -289,7 +289,12 @@
                         <div class="hallucination-header">
                             <span class="hallucination-type"><i class="fas fa-layer-group" style="color: #00D4AA;"></i> 2.1 High Standardization of Output</span>
                         </div>
-                        <p>Modern frontend ecosystems are heavily standardized, creating a space where AI can reliably generate correct or near-correct code: component-based architectures, design systems (Material UI, internal design tokens), and well-defined UI patterns and conventions.</p>
+                        <p>Modern frontend ecosystems are heavily standardized creating a space where AI can reliably generate correct or near-correct code.</p>
+                        <ul class="logic-list">
+                            <li>Component-based architectures</li>
+                            <li>Design systems (Material UI, internal design tokens)</li>
+                            <li>Well-defined UI patterns and conventions</li>
+                        </ul>
                     </div>
 
                     <div class="hallucination-card contextual" style="border-left-color: #0668E1;">
@@ -303,7 +308,7 @@
                         <div class="hallucination-header">
                             <span class="hallucination-type"><i class="fas fa-redo" style="color: #8b5cf6;"></i> 2.3 Strong Pattern Repetition</span>
                         </div>
-                        <p>A large percentage of frontend work is repetitive in terms of forms, tables, layout scaffolding, and boilerplating.</p>
+                        <p>A large percentage of frontend work is repetitive in terms of forms, tables, layout scaffolding, &amp; boilerplating.</p>
                     </div>
 
                     <figure class="article-figure large">
@@ -316,9 +321,7 @@
                 <section class="article-section">
                     <h2><i class="fas fa-server"></i> 3. Backend: Productivity Gains with a Ceiling (For Now!)</h2>
 
-                    <p>Backend systems show a more balanced and constrained improvement curve. AI tools are effective at generating boilerplate services, creating data models, producing test scaffolding, and assisting with documentation.</p>
-
-                    <p>With that being said, backend systems introduce a critical constraint: <strong>correctness under complexity</strong>. Unlike frontend systems, small mistakes here can cascade into:</p>
+                    <p>Backend systems show a more balanced and constrained improvement curve. AI tools are effective at generating boilerplate services, creating data models, producing test scaffolding &amp; assisting with documentation. With that being said, backend systems introduce a critical constraint: <strong>correctness under complexity</strong>. Unlike frontend systems, small mistakes here can cascade into data corruption, latent production incidents, security vulnerabilities &amp; hardcoding/hard-to-debug system failures.</p>
 
                     <div class="mitigation-grid">
                         <div class="mitigation-item" style="border-left: 3px solid #ef4444;">
@@ -351,12 +354,7 @@
                         </div>
                     </div>
 
-                    <div class="warning-callout">
-                        <i class="fas fa-exclamation-triangle"></i>
-                        <div>
-                            <strong>Important:</strong> Studies of AI-assisted coding workflows consistently show <strong>faster initial implementation but no proportional reduction in defect rates</strong> without strong human review. This is where experienced engineers maintain a clear advantage — they understand edge cases, anticipate failure modes, and reason about system invariants.
-                        </div>
-                    </div>
+                    <p>For backend engineering, studies of AI-assisted coding workflows consistently show <strong>faster initial implementation but no proportional reduction in defect rates</strong> without strong human review. This is where experienced engineers maintain a clear advantage as they understand edge cases, anticipate failure modes &amp; reason about system invariants.</p>
 
                     <figure class="article-figure large">
                         <img loading="lazy" src="images/articles/ai-transform-backend.svg" alt="Backend Productivity Gains with a Ceiling - Where AI helps vs the critical constraint of correctness under complexity">
@@ -368,7 +366,7 @@
                 <section class="article-section">
                     <h2><i class="fas fa-cloud"></i> 4. Infrastructure &amp; SRE Engineering: Lowest Direct Impact (For Now)</h2>
 
-                    <p>Infrastructure engineering remains the domain with the least direct automation impact from coding agents — including distributed system design, cloud architecture decisions, reliability engineering (SRE), performance/cost trade-offs, and incident response systems.</p>
+                    <p>Infrastructure engineering remains the domain with the least direct automation impact from coding agents including distributed system design, Cloud architecture decisions, Reliability engineering (SRE), Performance cost trade-offs &amp; incident response systems.</p>
 
                     <p><strong>Why AI impact is limited here:</strong></p>
 
@@ -377,26 +375,26 @@
                             <div class="measurement-icon" style="background: rgba(239,68,68,0.15);">
                                 <i class="fas fa-exclamation-circle" style="color: #ef4444;"></i>
                             </div>
-                            <h3>High Consequence</h3>
-                            <p>System-wide implications — downtime, latency, cost</p>
+                            <h3>4.1 High Consequence Environment</h3>
+                            <p>System-wide implications (downtime, latency, Cost...etc)</p>
                         </div>
                         <div class="measurement-card" style="border-top: 3px solid #f59e0b;">
                             <div class="measurement-icon" style="background: rgba(245,158,11,0.15);">
                                 <i class="fas fa-brain" style="color: #f59e0b;"></i>
                             </div>
-                            <h3>Judgment-Dependent</h3>
-                            <p>Non-deterministic decisions requiring contextual business understanding</p>
+                            <h3>4.2 Strong Dependency on Judgment</h3>
+                            <p>Many infra decisions are non-deterministic ones where contextual business understanding is required, not just code generation.</p>
                         </div>
                         <div class="measurement-card" style="border-top: 3px solid #8b5cf6;">
                             <div class="measurement-icon" style="background: rgba(139,92,246,0.15);">
                                 <i class="fas fa-project-diagram" style="color: #8b5cf6;"></i>
                             </div>
-                            <h3>Multi-Layer Reasoning</h3>
+                            <h3>4.3 Multi-Layer Reasoning</h3>
                             <p>Complex interdependencies across systems and teams</p>
                         </div>
                     </div>
 
-                    <p>AI can assist with scripting automation, log analysis, drafting configurations, and suggesting patterns — but it is not yet reliable for <strong>critical architectural decisions</strong>, <strong>ambiguous trade-off reasoning</strong>, and <strong>end-to-end system risk evaluation</strong>.</p>
+                    <p>Again, AI can assist with scripting automation, log analysis, drafting configurations &amp; suggesting patterns but it is not yet reliable for <strong>critical architectural decisions</strong>, <strong>ambiguous trade-off reasoning</strong> &amp; <strong>end-to-end system risk evaluation</strong>.</p>
 
                     <figure class="article-figure large">
                         <img loading="lazy" src="images/articles/ai-transform-infra.svg" alt="Infrastructure and SRE Engineering - Lowest Direct AI Impact with high consequence, judgment-heavy, and multi-layer reasoning constraints">
@@ -408,7 +406,7 @@
                 <section class="article-section">
                     <h2><i class="fas fa-balance-scale"></i> 5. The Real Divider: Determinism vs. Ambiguity</h2>
 
-                    <p>Across all domains, a clearer framework emerges:</p>
+                    <p>Across all domains, a clearer framework emerges AI performs best when the solution space is well defined, Outputs are predictable, validation is fast &amp; errors are cheap.</p>
 
                     <div class="hallucination-card contextual" style="border-left-color: #00D4AA;">
                         <div class="hallucination-header">
@@ -421,6 +419,8 @@
                             <li>Errors are <strong>cheap</strong></li>
                         </ul>
                     </div>
+
+                    <p>AI performs poorly when the problem is ambiguous, consequences are high, systems are interdependent &amp; correctness is non-trivial.</p>
 
                     <div class="hallucination-card factual">
                         <div class="hallucination-header">
@@ -437,7 +437,7 @@
                     <div class="insight-callout">
                         <i class="fas fa-lightbulb"></i>
                         <div>
-                            <strong>Reframing the conversation:</strong> This should reframe how we think about "AI productivity gains." It is not about coding language, prompting ability, or even tooling — <strong>it is about problem structure!</strong>
+                            <strong>Reframing the conversation:</strong> This should reframe how we should think about "AI productivity gains". It is not about coding language, prompting ability or even tooling, <strong>It is about problem structure!</strong>
                         </div>
                     </div>
 
@@ -451,7 +451,7 @@
                 <section class="article-section">
                     <h2><i class="fas fa-building"></i> 6. What This Means for Engineering Organizations</h2>
 
-                    <p>We are seeing across the industry:</p>
+                    <p>We are seeing across the industry <strong>dramatic acceleration</strong> (frontend, prototyping, tooling) where AI does not eliminate the need for experience; it shifts it from writing code to <strong>reviewing, constraining, and guiding systems</strong>, from implementation to <strong>system design and validation</strong>. While other areas will short-term remain human-heavy (infra, distributed systems, security architecture).</p>
 
                     <div class="hallucination-card contextual" style="border-left-color: #00D4AA;">
                         <div class="hallucination-header">
@@ -549,7 +549,7 @@
                         </picture>
                         <div class="author-info">
                             <span class="author-name">Tamer Fahmy</span>
-                            <span class="author-title">Director of Engineering</span>
+                            <span class="author-title">Director of Business Support Engineering at Meta</span>
                         </div>
                     </div>
                 </footer>
