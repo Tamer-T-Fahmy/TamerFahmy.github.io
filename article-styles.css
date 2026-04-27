@@ -112,7 +112,7 @@
 
 /* Article Sections */
 .article-section {
-    margin-bottom: 3rem;
+    margin-bottom: 1.5rem;
 }
 
 .article-section h2 {
@@ -178,7 +178,7 @@
 
 /* Article Figures */
 .article-figure {
-    margin: 2.5rem 0;
+    margin: 1.5rem 0;
     background: white;
     border-radius: 16px;
     padding: 1rem;
@@ -192,7 +192,7 @@
 }
 
 .article-figure.large {
-    margin: 3rem -2rem;
+    margin: 1.5rem -2rem;
     max-width: calc(100% + 4rem);
 }
 
