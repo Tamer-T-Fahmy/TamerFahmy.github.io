@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 460">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0a"/>
+      <stop offset="100%" style="stop-color:#111111"/>
+    </linearGradient>
+    <linearGradient id="blueGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0668E1"/>
+      <stop offset="100%" style="stop-color:#00D4AA"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="460" fill="url(#bgGrad)" rx="16"/>
+  <rect x="1" y="1" width="898" height="458" rx="16" fill="none" stroke="url(#blueGreen)" stroke-width="1" opacity="0.3"/>
+
+  <text x="450" y="45" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="20" font-weight="700" fill="url(#blueGreen)">Backend: Productivity Gains with a Ceiling</text>
+  <text x="450" y="70" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" fill="#666">Faster initial implementation — but no proportional reduction in defect rates without strong human review</text>
+
+  <!-- Left: AI Effective At -->
+  <rect x="40" y="95" width="390" height="220" rx="14" fill="#111111" stroke="#00D4AA" stroke-width="1.5"/>
+  <text x="235" y="125" text-anchor="middle" font-family="Inter,sans-serif" font-size="15" font-weight="700" fill="#00D4AA">Where AI Helps</text>
+
+  <rect x="60" y="145" width="350" height="35" rx="8" fill="rgba(0,212,170,0.08)"/>
+  <text x="80" y="168" font-family="Inter,sans-serif" font-size="13" fill="#a0a0a0">&#x2713;  Generating boilerplate services</text>
+  <rect x="60" y="188" width="350" height="35" rx="8" fill="rgba(0,212,170,0.08)"/>
+  <text x="80" y="211" font-family="Inter,sans-serif" font-size="13" fill="#a0a0a0">&#x2713;  Creating data models</text>
+  <rect x="60" y="231" width="350" height="35" rx="8" fill="rgba(0,212,170,0.08)"/>
+  <text x="80" y="254" font-family="Inter,sans-serif" font-size="13" fill="#a0a0a0">&#x2713;  Producing test scaffolding</text>
+  <rect x="60" y="274" width="350" height="35" rx="8" fill="rgba(0,212,170,0.08)"/>
+  <text x="80" y="297" font-family="Inter,sans-serif" font-size="13" fill="#a0a0a0">&#x2713;  Assisting with documentation</text>
+
+  <!-- Right: The Ceiling -->
+  <rect x="470" y="95" width="390" height="220" rx="14" fill="#111111" stroke="#ef4444" stroke-width="1.5"/>
+  <text x="665" y="125" text-anchor="middle" font-family="Inter,sans-serif" font-size="15" font-weight="700" fill="#ef4444">The Critical Constraint</text>
+
+  <text x="665" y="155" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" font-weight="600" fill="#ffffff">Correctness Under Complexity</text>
+  <text x="665" y="175" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" fill="#666">Small mistakes can cascade into:</text>
+
+  <rect x="490" y="190" width="195" height="42" rx="8" fill="rgba(239,68,68,0.1)" stroke="rgba(239,68,68,0.3)" stroke-width="1"/>
+  <text x="587" y="210" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#ef4444">&#x26A0; Data corruption</text>
+  <text x="587" y="224" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="#666">Silent data loss</text>
+
+  <rect x="695" y="190" width="155" height="42" rx="8" fill="rgba(239,68,68,0.1)" stroke="rgba(239,68,68,0.3)" stroke-width="1"/>
+  <text x="772" y="210" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#ef4444">&#x26A0; Security vulns</text>
+  <text x="772" y="224" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="#666">Auth bypass risks</text>
+
+  <rect x="490" y="240" width="195" height="42" rx="8" fill="rgba(239,68,68,0.1)" stroke="rgba(239,68,68,0.3)" stroke-width="1"/>
+  <text x="587" y="260" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#ef4444">&#x26A0; Production incidents</text>
+  <text x="587" y="274" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="#666">Latent failures</text>
+
+  <rect x="695" y="240" width="155" height="42" rx="8" fill="rgba(239,68,68,0.1)" stroke="rgba(239,68,68,0.3)" stroke-width="1"/>
+  <text x="772" y="260" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#ef4444">&#x26A0; System failures</text>
+  <text x="772" y="274" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="#666">Hard to debug</text>
+
+  <!-- Bottom: Experienced engineer advantage -->
+  <rect x="100" y="340" width="700" height="100" rx="14" fill="rgba(245,158,11,0.08)" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="450" y="370" text-anchor="middle" font-family="Inter,sans-serif" font-size="14" font-weight="700" fill="#f59e0b">Why Experienced Engineers Maintain a Clear Advantage</text>
+
+  <text x="220" y="400" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" fill="#a0a0a0">Understand edge cases</text>
+  <text x="450" y="400" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" fill="#a0a0a0">Anticipate failure modes</text>
+  <text x="680" y="400" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" fill="#a0a0a0">Reason about invariants</text>
+
+  <circle cx="220" cy="420" r="4" fill="#f59e0b"/>
+  <circle cx="450" cy="420" r="4" fill="#f59e0b"/>
+  <circle cx="680" cy="420" r="4" fill="#f59e0b"/>
+</svg>

@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0a"/>
+      <stop offset="100%" style="stop-color:#111111"/>
+    </linearGradient>
+    <linearGradient id="blueGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0668E1"/>
+      <stop offset="100%" style="stop-color:#00D4AA"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="420" fill="url(#bgGrad)" rx="16"/>
+  <rect x="1" y="1" width="898" height="418" rx="16" fill="none" stroke="url(#blueGreen)" stroke-width="1" opacity="0.3"/>
+
+  <text x="450" y="45" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="20" font-weight="700" fill="url(#blueGreen)">The Core Shift: From Skill Replacement to Augmentation</text>
+  <text x="450" y="70" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" fill="#666">AI acts less like a skill equalizer and more like a work-type amplifier</text>
+
+  <!-- Left: AI Strong -->
+  <rect x="50" y="95" width="380" height="280" rx="14" fill="#111111" stroke="#00D4AA" stroke-width="1.5"/>
+  <rect x="50" y="95" width="380" height="45" rx="14" fill="rgba(0,212,170,0.15)"/>
+  <rect x="50" y="126" width="380" height="14" fill="#111111"/>
+  <text x="240" y="125" text-anchor="middle" font-family="Inter,sans-serif" font-size="16" font-weight="700" fill="#00D4AA">AI Strongest</text>
+
+  <circle cx="90" cy="175" r="14" fill="rgba(0,212,170,0.2)" stroke="#00D4AA" stroke-width="1"/>
+  <text x="90" y="180" text-anchor="middle" font-family="Inter,sans-serif" font-size="14" fill="#00D4AA">&#x2713;</text>
+  <text x="115" y="180" font-family="Inter,sans-serif" font-size="14" fill="#ffffff">Structure exists</text>
+
+  <circle cx="90" cy="215" r="14" fill="rgba(0,212,170,0.2)" stroke="#00D4AA" stroke-width="1"/>
+  <text x="90" y="220" text-anchor="middle" font-family="Inter,sans-serif" font-size="14" fill="#00D4AA">&#x2713;</text>
+  <text x="115" y="220" font-family="Inter,sans-serif" font-size="14" fill="#ffffff">Repetition is high</text>
+
+  <circle cx="90" cy="255" r="14" fill="rgba(0,212,170,0.2)" stroke="#00D4AA" stroke-width="1"/>
+  <text x="90" y="260" text-anchor="middle" font-family="Inter,sans-serif" font-size="14" fill="#00D4AA">&#x2713;</text>
+  <text x="115" y="260" font-family="Inter,sans-serif" font-size="14" fill="#ffffff">Clear patterns exist</text>
+
+  <circle cx="90" cy="295" r="14" fill="rgba(0,212,170,0.2)" stroke="#00D4AA" stroke-width="1"/>
+  <text x="90" y="300" text-anchor="middle" font-family="Inter,sans-serif" font-size="14" fill="#00D4AA">&#x2713;</text>
+  <text x="115" y="300" font-family="Inter,sans-serif" font-size="14" fill="#ffffff">Fast validation loops</text>
+
+  <circle cx="90" cy="335" r="14" fill="rgba(0,212,170,0.2)" stroke="#00D4AA" stroke-width="1"/>
+  <text x="90" y="340" text-anchor="middle" font-family="Inter,sans-serif" font-size="14" fill="#00D4AA">&#x2713;</text>
+  <text x="115" y="340" font-family="Inter,sans-serif" font-size="14" fill="#ffffff">Errors are cheap to fix</text>
+
+  <!-- Right: AI Weak -->
+  <rect x="470" y="95" width="380" height="280" rx="14" fill="#111111" stroke="#ef4444" stroke-width="1.5"/>
+  <rect x="470" y="95" width="380" height="45" rx="14" fill="rgba(239,68,68,0.15)"/>
+  <rect x="470" y="126" width="380" height="14" fill="#111111"/>
+  <text x="660" y="125" text-anchor="middle" font-family="Inter,sans-serif" font-size="16" font-weight="700" fill="#ef4444">AI Weakest</text>
+
+  <circle cx="510" cy="175" r="14" fill="rgba(239,68,68,0.2)" stroke="#ef4444" stroke-width="1"/>
+  <text x="510" y="180" text-anchor="middle" font-family="Inter,sans-serif" font-size="14" fill="#ef4444">&#x2717;</text>
+  <text x="535" y="180" font-family="Inter,sans-serif" font-size="14" fill="#ffffff">Uncertainty dominates</text>
+
+  <circle cx="510" cy="215" r="14" fill="rgba(239,68,68,0.2)" stroke="#ef4444" stroke-width="1"/>
+  <text x="510" y="220" text-anchor="middle" font-family="Inter,sans-serif" font-size="14" fill="#ef4444">&#x2717;</text>
+  <text x="535" y="220" font-family="Inter,sans-serif" font-size="14" fill="#ffffff">Consequences are high</text>
+
+  <circle cx="510" cy="255" r="14" fill="rgba(239,68,68,0.2)" stroke="#ef4444" stroke-width="1"/>
+  <text x="510" y="260" text-anchor="middle" font-family="Inter,sans-serif" font-size="14" fill="#ef4444">&#x2717;</text>
+  <text x="535" y="260" font-family="Inter,sans-serif" font-size="14" fill="#ffffff">System complexity is high</text>
+
+  <circle cx="510" cy="295" r="14" fill="rgba(239,68,68,0.2)" stroke="#ef4444" stroke-width="1"/>
+  <text x="510" y="300" text-anchor="middle" font-family="Inter,sans-serif" font-size="14" fill="#ef4444">&#x2717;</text>
+  <text x="535" y="300" font-family="Inter,sans-serif" font-size="14" fill="#ffffff">Deep judgment required</text>
+
+  <circle cx="510" cy="335" r="14" fill="rgba(239,68,68,0.2)" stroke="#ef4444" stroke-width="1"/>
+  <text x="510" y="340" text-anchor="middle" font-family="Inter,sans-serif" font-size="14" fill="#ef4444">&#x2717;</text>
+  <text x="535" y="340" font-family="Inter,sans-serif" font-size="14" fill="#ffffff">Research-driven exploration</text>
+
+  <!-- Center arrow -->
+  <text x="445" y="245" text-anchor="middle" font-family="Inter,sans-serif" font-size="28" fill="#666">&#x2194;</text>
+
+  <!-- Bottom note -->
+  <text x="450" y="405" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#666">Not about coding language or prompting ability — it's about problem structure</text>
+</svg>

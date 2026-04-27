@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0a"/>
+      <stop offset="100%" style="stop-color:#111111"/>
+    </linearGradient>
+    <linearGradient id="blueGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0668E1"/>
+      <stop offset="100%" style="stop-color:#00D4AA"/>
+    </linearGradient>
+    <linearGradient id="blueGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#0668E1;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#00D4AA;stop-opacity:0.3"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <!-- Background -->
+  <rect width="900" height="500" fill="url(#bgGrad)" rx="16"/>
+  <rect x="1" y="1" width="898" height="498" rx="16" fill="none" stroke="url(#blueGreen)" stroke-width="1" opacity="0.3"/>
+
+  <!-- Title -->
+  <text x="450" y="50" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="22" font-weight="700" fill="url(#blueGreen)">What Determines AI Coding Agent Value?</text>
+
+  <!-- Four quadrant boxes -->
+  <!-- Deterministic -->
+  <rect x="50" y="80" width="380" height="90" rx="12" fill="#111111" stroke="#0668E1" stroke-width="1.5"/>
+  <circle cx="90" cy="125" r="22" fill="rgba(6,104,225,0.2)" stroke="#0668E1" stroke-width="1.5"/>
+  <text x="90" y="131" text-anchor="middle" font-family="Inter,sans-serif" font-size="18" fill="#0668E1">&#xf0e7;</text>
+  <text x="125" y="115" font-family="Inter,sans-serif" font-size="15" font-weight="700" fill="#ffffff">How Deterministic the Work Is</text>
+  <text x="125" y="138" font-family="Inter,sans-serif" font-size="12" fill="#a0a0a0">Structured, well-defined tasks = high AI leverage</text>
+
+  <!-- Cost of Mistakes -->
+  <rect x="470" y="80" width="380" height="90" rx="12" fill="#111111" stroke="#ef4444" stroke-width="1.5"/>
+  <circle cx="510" cy="125" r="22" fill="rgba(239,68,68,0.2)" stroke="#ef4444" stroke-width="1.5"/>
+  <text x="510" y="131" text-anchor="middle" font-family="Inter,sans-serif" font-size="18" fill="#ef4444">!</text>
+  <text x="545" y="115" font-family="Inter,sans-serif" font-size="15" font-weight="700" fill="#ffffff">How Costly Mistakes Are</text>
+  <text x="545" y="138" font-family="Inter,sans-serif" font-size="12" fill="#a0a0a0">High-consequence domains limit AI autonomy</text>
+
+  <!-- Judgment Required -->
+  <rect x="50" y="190" width="380" height="90" rx="12" fill="#111111" stroke="#f59e0b" stroke-width="1.5"/>
+  <circle cx="90" cy="235" r="22" fill="rgba(245,158,11,0.2)" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="90" y="241" text-anchor="middle" font-family="Inter,sans-serif" font-size="18" fill="#f59e0b">?</text>
+  <text x="125" y="225" font-family="Inter,sans-serif" font-size="15" font-weight="700" fill="#ffffff">Judgment, Ambiguity &amp; Exploration</text>
+  <text x="125" y="248" font-family="Inter,sans-serif" font-size="12" fill="#a0a0a0">More ambiguity = less reliable AI output</text>
+
+  <!-- Repetition -->
+  <rect x="470" y="190" width="380" height="90" rx="12" fill="#111111" stroke="#00D4AA" stroke-width="1.5"/>
+  <circle cx="510" cy="235" r="22" fill="rgba(0,212,170,0.2)" stroke="#00D4AA" stroke-width="1.5"/>
+  <text x="510" y="241" text-anchor="middle" font-family="Inter,sans-serif" font-size="16" fill="#00D4AA">&#x21BB;</text>
+  <text x="545" y="225" font-family="Inter,sans-serif" font-size="15" font-weight="700" fill="#ffffff">Repetitive vs. Research-Driven</text>
+  <text x="545" y="248" font-family="Inter,sans-serif" font-size="12" fill="#a0a0a0">Pattern repetition = maximum AI acceleration</text>
+
+  <!-- Central insight box -->
+  <rect x="150" y="310" width="600" height="80" rx="14" fill="url(#blueGlow)" stroke="url(#blueGreen)" stroke-width="1.5"/>
+  <text x="450" y="345" text-anchor="middle" font-family="Inter,sans-serif" font-size="14" font-weight="700" fill="#ffffff">Key Insight</text>
+  <text x="450" y="370" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" fill="#a0a0a0">"The value of AI coding agents is determined less by the level of the engineer</text>
+  <text x="450" y="385" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" fill="#a0a0a0">and more by the nature of the problem being solved."</text>
+
+  <!-- Domain impact spectrum -->
+  <text x="450" y="425" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" font-weight="600" fill="#ffffff">AI Impact Spectrum by Domain</text>
+  <!-- Spectrum bar -->
+  <rect x="100" y="440" width="700" height="12" rx="6" fill="#1a1a1a"/>
+  <rect x="100" y="440" width="700" height="12" rx="6" fill="url(#blueGreen)" opacity="0.4"/>
+  <!-- Domain markers -->
+  <circle cx="200" cy="446" r="8" fill="#00D4AA" filter="url(#glow)"/>
+  <text x="200" y="475" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" font-weight="600" fill="#00D4AA">Frontend</text>
+  <text x="200" y="490" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="#666">Highest Impact</text>
+
+  <circle cx="450" cy="446" r="8" fill="#f59e0b"/>
+  <text x="450" y="475" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" font-weight="600" fill="#f59e0b">Backend</text>
+  <text x="450" y="490" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="#666">Moderate Impact</text>
+
+  <circle cx="700" cy="446" r="8" fill="#ef4444"/>
+  <text x="700" y="475" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" font-weight="600" fill="#ef4444">Infra / SRE</text>
+  <text x="700" y="490" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="#666">Lowest Impact</text>
+</svg>
