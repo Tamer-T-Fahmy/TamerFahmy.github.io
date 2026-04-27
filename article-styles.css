@@ -113,6 +113,7 @@
 /* Article Sections */
 .article-section {
     margin-bottom: 0.5rem;
+    padding: 0;
 }
 
 .article-section h2 {
