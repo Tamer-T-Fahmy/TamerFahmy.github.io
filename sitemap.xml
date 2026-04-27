@@ -124,6 +124,29 @@
         </image:image>
     </url>
 
+    <!-- Article: AI Transformation in Engineering - Coding Agents -->
+    <url>
+        <loc>https://tamerfahmy.net/article-ai-transformation-coding-agents.html</loc>
+        <lastmod>2026-04-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tamerfahmy.net/images/articles/ai-transform-intro.svg</image:loc>
+            <image:title>AI Coding Agents Impact Spectrum - Frontend, Backend, Infrastructure by Tamer Fahmy</image:title>
+            <image:caption>Analysis of how AI coding agents create leverage across frontend, backend, and infrastructure engineering based on problem structure and determinism</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://tamerfahmy.net/images/articles/ai-transform-determinism.svg</image:loc>
+            <image:title>AI Determinism vs Ambiguity Framework - Engineering Effectiveness</image:title>
+            <image:caption>Framework showing when AI coding agents perform best (deterministic tasks) versus poorly (ambiguous, high-consequence problems)</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://tamerfahmy.net/images/articles/ai-transform-frontend.svg</image:loc>
+            <image:title>AI Frontend Engineering Productivity Uplift</image:title>
+            <image:caption>Three structural reasons why frontend engineering sees the biggest AI coding agent productivity gains</image:caption>
+        </image:image>
+    </url>
+
     <!-- Privacy Policy -->
     <url>
         <loc>https://tamerfahmy.net/privacy.html</loc>
